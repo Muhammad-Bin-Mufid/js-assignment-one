@@ -3,7 +3,8 @@
 function kilometerToMeter(inKilometer) {
     if (inKilometer >= 0) {
         var inMeter = inKilometer * 1000;
-        console.log(inMeter);
+        //console.log(inMeter);
+        return inMeter;
     } else {
         console.log("Invalid input type. Your input was: " + inKilometer + ". Please enter just a pure number without any symbol (ex: -,+,/,* or any other)");
     }
@@ -15,7 +16,7 @@ function kilometerToMeter(inKilometer) {
 
 function budgetCalculator(wristQuantity, mobileQuantity, LaptopQuantity) {
 
-    if (wristQuantity < 0 || mobileQuantity < 0 || LaptopQuantity < 0) {
+    if (wristQuantity <= 0 || mobileQuantity <= 0 || LaptopQuantity <= 0) {
         console.log("Please enter a valid input or more than zero");
     } else {
         const wristUnitPrice = 50;
@@ -27,7 +28,8 @@ function budgetCalculator(wristQuantity, mobileQuantity, LaptopQuantity) {
         let calculatedLaptopPrice = LaptopQuantity * laptopUnitPrice;
 
         let totalBudget = calculatedWristPrice + calculatedMobilePrice + calculatedLaptopPrice;
-        console.log(totalBudget);
+        //console.log(totalBudget);
+        return totalBudget;
 
     }
 }
@@ -39,7 +41,7 @@ function budgetCalculator(wristQuantity, mobileQuantity, LaptopQuantity) {
 function hotelCost(daysToStay) {
 
     if (daysToStay <= 0) {
-        console.log("Please enter a valid input or more than zero");
+        console.log("Please enter a valid input or more than zero for ensuring your day value");
     } else {
         const firstTenDaysBill = 100;
         const secondTenDaysBill = 80;
@@ -51,16 +53,18 @@ function hotelCost(daysToStay) {
 
         if (daysToStay > 0 && daysToStay < 11) {
             firstTenDaysCost = firstTenDaysBill * daysToStay;
-            console.log(firstTenDaysCost);
+            //console.log(firstTenDaysCost);
+            return firstTenDaysCost;
         } else if (daysToStay > 10 && daysToStay < 21) {
             secondTendaysCost = firstTenDaysBill * 10 + secondTenDaysBill * (daysToStay - 10);
-            console.log(secondTendaysCost);
+            //console.log(secondTendaysCost);
+            return secondTendaysCost;
         } else {
             afterSecondTenDaysCost = firstTenDaysBill * 10 + secondTenDaysBill * 10 + afterSecondTenDaysBill * (daysToStay - 20);
-            console.log(afterSecondTenDaysCost);
+            //console.log(afterSecondTenDaysCost);
+            return afterSecondTenDaysCost;
         }
     }
-
 }
 
 
@@ -79,20 +83,10 @@ function megaFriend(friendsNameArray) {
             //console.log(maxValue);
             var largestName = arraysLengthes.indexOf(maxValue);
             //console.log(largestName);
-        } console.log(friendsNameArray[largestName]);
+        }
+        console.log(friendsNameArray[largestName]);
+        return friendsNameArray[largestName];
     } else {
-        console.log("Please enter an array as value");
+        console.log("Please enter only array as value");
     }
 }
-
-
-// function calling section
-
-kilometerToMeter(0);
-budgetCalculator(-10, 20, 30);
-hotelCost(40);
-megaFriend(5);
-
-
-
-
